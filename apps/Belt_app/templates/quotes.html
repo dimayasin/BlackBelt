@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>Courses</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" media="screen" title="no title" charset="utf-8">
+    <!-- <link rel="script" href="{% static 'date_time.js' %}" media="screen" title="no title" charset="utf-8" /> -->
+
+</head>
+
+<body>
+    <h3>
+        <a href="/out">Logout</a>
+    </h3>
+
+
+    <h1>Welcome {{request.session.name}}!</h1>
+    <div id="main">
+        <div id="container1">
+            <h2>Quotable Quotes: </h2>
+            <div id="display1">
+
+                {% for no_fave in nofaves %}
+
+                <div class="cellD">
+                    {{no_fave.quoted_by}}: {{no_fave.msg}}
+                    <p>
+                        <i>Posted by</i>
+                        <a href="{{no_fave.posted_by.id}}/by">{{no_fave.posted_by.name}}</a>
+                        <a class="button" href="{{no_fave.id}}/favorites">Add to My List</a>
+
+                    </p>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+
+        <div id="container2">
+            <!-- <h2><a href="/add">Add New Appointment</a></h2> -->
+            <h2>Your Favorite Courses: </h2>
+            <div id="display2">
+
+                {% for list in this_quotelist %}
+                <div class="cellD">
+                    {{list.quoted_by}}: {{list.msg}}
+                    <p>
+                        <i>Posted by</i>
+                        <a href="{{list.posted_by.id}}/by">{{list.posted_by.name}}</a>
+                        <a class="button" href="{{list.id}}/remove">Remove From My List</a>
+                    </p>
+                </div>
+
+                {% endfor %} {% for fave in favelists %}
+
+                <div class="cellD">
+                    {{fave.quoted_by}}: {{fave.msg}}
+                    <p>
+                        <i>Posted by</i>
+                        <a href="{{fave.posted_by.id}}/by">{{fave.posted_by.name}}</a>
+                        <a class="button" href="{{fave.id}}/remove">Remove From My List</a>
+                    </p>
+                </div>
+
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+
+    <h2>To Contribute a Quote
+        <a href="/new">Click Here</a>
+    </h2>
+
+</body>
+
+</html>

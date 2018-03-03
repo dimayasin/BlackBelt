@@ -1,0 +1,36 @@
+<h2></h2>
+Add a Quote: </h2>
+<form action="/new_item" method="POST">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Quoted by:</td>
+            <td>
+                <input type="text" name="myquote" />
+            </td>
+        </tr>
+        <tr>
+            <td>Message:</td>
+            <td>
+                <textarea name="msg"></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Submit" />
+            </td>
+        </tr>
+
+    </table>
+
+</form>
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+</ul>
+{% endif %}

@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title>Login & Registration Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+    <h1>Registration</h1>
+    <form action="/create" method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <input type="text" name="name" />
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <input type="email" name="email" />
+                </td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td>
+                    <input type="password" name="psswrd" />
+                </td>
+            </tr>
+            <tr>
+                <td>Confirm Password:</td>
+                <td>
+                    <input type="password" name="cpsswrd" />
+                </td>
+            </tr>
+            <tr>
+                    <td>Date of Birth:</td>
+                    <td>
+                        <input type="date" name="dob" />
+                    </td>
+                </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Register" />
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+</body>
+
+</html>

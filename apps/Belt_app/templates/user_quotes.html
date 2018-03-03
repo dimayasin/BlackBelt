@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <title>Courses</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" media="screen" title="no title" charset="utf-8">
+
+</head>
+
+<body>
+    <h3>
+        <a href="/out">Logout</a>
+ |
+        <a href="/show">Dashboard</a>
+    </h3>
+
+    <h2>Posted by {{name}}</h2>
+    <p>Count: {{count}}</p>
+    {% for quote in quotes %}
+    <p><span>{{quote.quoted_by}}: </span>{{quote.msg}}</p>
+    {% endfor %}
+
+</body>
+
+</html>

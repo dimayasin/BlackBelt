@@ -1,0 +1,58 @@
+h3{
+    text-align: right;
+}
+#display1 {
+    width: 500px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 50px;
+    vertical-align: top;
+}
+span{
+    color:rgb(238, 67, 67);
+}
+#display2 {
+    width: 500px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 50px;
+    vertical-align: top;
+}
+#main{
+
+    width: 100%;
+    height: 900px;
+    box-sizing: border-box;
+    position: relative;
+}
+#container1{
+    width: 400px;
+    vertical-align: top;
+}
+#container2{
+    width: 400px;
+    vertical-align: top;
+}
+.cellD{
+    width: 500px;
+
+}
+
+.button{
+    margin-top: 100px;
+    width:100px;
+    border: 1px solid black;
+    background-color: rgb(209, 202, 202);
+    padding: 5px;
+    height: 50px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-left: 70px;
+    z-index:2; 
+    position: relative;
+    text-align: center;
+    
+
+}
